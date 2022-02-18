@@ -5,11 +5,11 @@
         <div class="hidden sm:block sm:ml-6 ">
           <div class="flex space-x-4">
             <a href="/" , class="btn-header bg-cyan-600 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a>
-            <%= link_to "Books", {},class:" btn-header bg-cyan-600 text-white px-3 py-2 rounded-md text-sm font-medium"%>
+            <%= link_to "Books", books_path,class:" btn-header bg-cyan-600 text-white px-3 py-2 rounded-md text-sm font-medium"%>
             <%= link_to "Members",{},class:" btn-header bg-cyan-600 text-white px-3 py-2 rounded-md text-sm font-medium"%>
             <%if  current_user.user_type == "admin"%>
               <%= link_to "Librarians",{},class:" btn-header bg-cyan-600 text-white px-3 py-2 rounded-md text-sm font-medium"%>
-              <%= link_to "Libraries",{}, class:" btn-header bg-cyan-600 text-white px-3 py-2 rounded-md text-sm font-medium"%>
+              <%= link_to "Library",libraries_path, class:" btn-header bg-cyan-600 text-white px-3 py-2 rounded-md text-sm font-medium"%>
             <%end%>
           </div>
         </div>
@@ -20,7 +20,7 @@
         <%end%>
       </div>
       <div class="flex-shrink-0 flex items-center border-r border-gray-500 pr-2">
-        <%if  current_user.user_type == "admin"%>
+        <%if  current_user.user_type == "member"%>
           <h1 class="text-gray-900 ml-3 "><i class='fas fa-building' style='font-size:20px'></i> <%="#{current_user.library.name }"%> Library</h1>   
         <% end %>
       </div>
