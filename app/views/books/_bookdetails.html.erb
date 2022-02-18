@@ -1,0 +1,10 @@
+<tr> 
+  <td class="py-2 px-5 m-1 text-left text-sm font-medium "><%= link_to bookdetails.name, book_path(bookdetails.id)%></td>
+  <td class="py-2 px-2 m-1 text-left  text-sm font-medium"><%= link_to bookdetails.author, book_path(bookdetails.id) %></td>
+  <td class="py-2 px-1 m-1 text-sm font-medium"><%= link_to bookdetails.isbn, book_path(bookdetails.id)%></td>
+  <td class="py-2 px-1 m-1 text-sm font-medium"><%= link_to bookdetails.publication_year,book_path(bookdetails.id)%></td>
+  <td class="py-2 px-1 m-1 text-sm font-medium"><%= link_to bookdetails.catagory,book_path(bookdetails.id)%></td>
+  <td class="my-4"><%= link_to 'Show', bookdetails,class:"bg-cyan-600  text-white text-sm font-medium py-2 px-10  rounded focus:outline-none focus:shadow-outline "%></td>
+  <td class="my-4"><%= link_to 'Edit', edit_book_path(bookdetails),class:"bg-cyan-600 text-white text-sm font-medium py-2 px-10  rounded focus:outline-none focus:shadow-outline " %></td>
+  <td class="my-4"><%= button_to 'Delete', bookdetails, method: :delete, data: { confirm: 'Are you sure?' }, class:"bg-cyan-600 text-white text-sm font-medium py-2 px-10  rounded focus:outline-none focus:shadow-outline "%></td>
+</tr>
