@@ -1,7 +1,6 @@
-<p id="notice"><%= notice %></p>
 
 
-<div class="grid grid-cols-1 gap-2 place-items-center capitalize">
+<div class="grid grid-cols-1 gap-2 place-items-center ">
   <div class="flex w-full max-w-6xl items-center justify-between mt-1">
     <%= link_to 'Back', users_path,class:"bg-cyan-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"%>
     <%= link_to 'Edit', edit_user_path(@user) ,class:"bg-cyan-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"%>
@@ -15,18 +14,23 @@
         <thead>
           <tr>
             <th class="mb-2"><strong>Name:</strong></th>
+            <th class="mb-2"><strong>Email:</strong></th>
+            <th class="mb-2"><strong>Father Name</strong></th>
             <th class="mb-2 text-left"><strong>Address:</strong></th>
-            <th class="mb-2 text-left"> <strong>Location:</strong></th>
+            <th class="mb-2 text-left"> <strong>State:</strong></th>
+            <th class="mb-2"><strong>Pin Code</strong></th>
             <th class="mb-2"><strong>Created at:</strong></th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="py-2 px-2 m-1 text-center text-sm font-medium"><%= @library.name%></td>
-            <td class="py-2 m-1 text-left text-sm font-medium"><%= @library.address %></td>
-            <td class="py-2  m-1 text-left text-sm font-medium"><%=@library.location %></td>
-            <td class="py-2 px-2 m-1 text-center text-sm font-medium"><%= @library.created_at %></td>
-
+            <td class="py-2 px-2 m-1 text-center capitalize text-sm font-medium"><%= @user.name%></td>
+            <td class="py-2 m-1 text-center text-sm font-medium"><%= @user.email %></td>
+            <td class="py-2 m-1 text-left text-sm capitalize font-medium"><%= @user.father_name %></td>
+            <td class="py-2 m-1 text-left text-sm capitalize font-medium"><%= @user.address%></td>
+            <td class="py-2 m-1 text-left text-sm capitalize font-medium"><%= @user.state %></td>
+            <td class="py-2 m-1 text-center text-sm font-medium"><%= @user.pin_code %></td>
+            <td class="py-2  m-1 text-center text-sm font-medium"><%= @user.created_at %></td>
           </tr>
         </tbody>
       </table>

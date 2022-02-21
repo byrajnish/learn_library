@@ -10,14 +10,25 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <%# <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script> %>
   </head>
 
   <body>
 
     <%= render "/devise/shared/header" %>  
 
-
-    <%= yield %>
+    <% if notice.present? %>
+      <div id="note" class="bg-green-300 py-4 px-5 absolute w-full transition bottom-0 capitalize"><p id="notice" class=""><%=notice%></p></div>
+    <% end %>
+    <% if alert.present? %>
+      <div id="aler" class="bg-red-300 py-4 px-5 absolute w-full transition bottom-0 capitalize"><p id="alert" class=""><%=alert%></p></div>
+    <% end %>
+    <%= yield  %>
+    <script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+        setTimeout(function () {$('#aler').addClass("hidden");$('#note').addClass('hidden');}, 2000)
+        console.log('DOM fully loaded and parsed');
+      });
+    </script>
   </body>
 </html>
