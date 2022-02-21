@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   belongs_to :library
+
+  def self.admin 
+    user_type == 'admin'
+  end
 end

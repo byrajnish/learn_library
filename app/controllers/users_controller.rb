@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   # GET /users or /users.json
   def index
-    @users = User.all
+    @users = User.where(user_type: "librarian") 
   end
 
   # GET /users/1 or /users/1.json
@@ -20,6 +20,13 @@ class UsersController < ApplicationController
   end
 
   def home
+  end
+
+  def member 
+    @member = User.where(user_type: "member")
+  end
+
+  def librarian
   end
 
   # POST /users or /users.json
