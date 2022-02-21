@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root to: 'books#index'
+  root to: 'books#home'
+
+  get 'index', to: 'admin/users#index'
   resources :books
   resources :libraries
   resources :users

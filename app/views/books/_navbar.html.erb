@@ -4,12 +4,15 @@
       <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start" style="margin-left:-23px" >
         <div class="hidden sm:block sm:ml-6 ">
           <div class="flex space-x-4">
-            <a href="/" , class="btn-header bg-cyan-600 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a>
-            <%= link_to "Books", books_path,class:" btn-header bg-cyan-600 text-white px-3 py-2 rounded-md text-sm font-medium"%>
-            <%= link_to "Members",{},class:" btn-header bg-cyan-600 text-white px-3 py-2 rounded-md text-sm font-medium"%>
+            <a href="/index" , class="btn-header bg-cyan-600 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a>
             <%if  current_user.user_type == "admin"%>
-              <%= link_to "Librarians",{},class:" btn-header bg-cyan-600 text-white px-3 py-2 rounded-md text-sm font-medium"%>
+              <%= link_to "Books", books_path,class:" btn-header bg-cyan-600 text-white px-3 py-2 rounded-md text-sm font-medium"%>
+              <%= link_to "Members",{},class:" btn-header bg-cyan-600 text-white px-3 py-2 rounded-md text-sm font-medium"%>
+              <%= link_to "Librarians",users_path,class:" btn-header bg-cyan-600 text-white px-3 py-2 rounded-md text-sm font-medium"%>
               <%= link_to "Library",libraries_path, class:" btn-header bg-cyan-600 text-white px-3 py-2 rounded-md text-sm font-medium"%>
+            <%else%>
+              <%= link_to "Books", books_path,class:" btn-header bg-cyan-600 text-white px-3 py-2 rounded-md text-sm font-medium"%>
+              <%= link_to "Members",{},class:" btn-header bg-cyan-600 text-white px-3 py-2 rounded-md text-sm font-medium"%>
             <%end%>
           </div>
         </div>

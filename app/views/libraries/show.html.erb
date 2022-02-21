@@ -1,4 +1,35 @@
-<p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_library_path(@library) %> |
-<%= link_to 'Back', libraries_path %>
+<%#= render 'books/booknavbar'%>
+<div class="grid grid-cols-1 gap-2 place-items-center capitalize">
+  <div class="flex w-full max-w-6xl items-center justify-between mt-1">
+    <%= link_to 'Back', libraries_path,class:"bg-cyan-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"%>
+    <%= link_to 'Edit', edit_library_path(@library) ,class:"bg-cyan-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"%>
+  </div>
+  <div class="  w-full max-w-6xl ">
+    <div class='bg-cyan-600 flex justify-center text-lg p-2 rounded-md text-white'>
+       <h4>Library Details</h4>
+    </div>
+    <div class="shadow-md flex flex-col rounded-md px-8 pt-6 pb-8 mb-4 mx-auto w-50 bg-white">
+      <table>
+        <thead>
+          <tr>
+            <th class="mb-2"><strong>Library Name:</strong></th>
+            <th class="mb-2 text-left"><strong>Address:</strong></th>
+            <th class="mb-2 text-left"> <strong>Location:</strong></th>
+            <th class="mb-2"><strong>Created at:</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="py-2 px-2 m-1 text-center text-sm font-medium"><%= @library.name%></td>
+            <td class="py-2 m-1 text-left text-sm font-medium"><%= @library.address %></td>
+            <td class="py-2  m-1 text-left text-sm font-medium"><%=@library.location %></td>
+            <td class="py-2 px-2 m-1 text-center text-sm font-medium"><%= @library.created_at %></td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

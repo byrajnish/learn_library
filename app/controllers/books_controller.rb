@@ -19,6 +19,9 @@ class BooksController < ApplicationController
   def edit
   end
 
+  def home
+  end
+
   # POST /books or /books.json
   def create
     @book = Book.new(book_params)

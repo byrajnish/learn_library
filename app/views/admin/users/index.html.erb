@@ -1,0 +1,46 @@
+<div class="container w-full max-w-6xl mx-auto">
+  <div class=" grid grid-cols-1 gap-2 md:grid-cols-4 place-items-center   rounded-md p-2 text-white">
+
+    <div  class="bg-cyan-600 px-6 py-6 w-full  rounded-md text-center border  shadow">
+      <span class="text-lg">Total Members</span>
+      <strong><h2 class="text-3xl animate-pulse "><%=@membercount %></h2></strong>
+    </div>            
+    <div class="bg-cyan-600 px-6 py-6 w-full  rounded-md  text-center border shadow">
+      <span class="text-lg">Total Books </span>
+      <strong><h2 class="text-3xl animate-pulse "><%= @books_total_count%></h2></strong>
+    </div>
+    <div  class="bg-cyan-600 px-6 py-6 w-full  rounded-md text-center border shadow">
+      <span class="text-lg">Available Books</span>
+      <strong><h2 class="text-3xl animate-pulse "><%= @books_available_count %></h2></strong>
+    </div>
+    <div  class="bg-cyan-600 px-6 py-6  w-full  rounded-md  text-center  border shadow">
+      <span class="text-lg">Issued Books</span>
+      <strong><h2 class="text-3xl animate-pulse "><%= @books_issued_count %></h2></strong>
+    </div>
+  </div>
+  <div id="buttons" ,class="hidden border">
+    <div class=" grid grid-cols-1 gap-2 md:grid-cols-2 place-items-center  rounded-md bg-white p-2 text-white">
+      <button id="add-book" class=" w-full bg-cyan-600 px-6 py-3 border rounded-md shadow ">
+        <%= link_to 'Add New member',class:"px-auto py-10 text-white text-center text-lg" %>
+      </button>
+      <button id="add-book" class=" w-full bg-cyan-600 px-6 py-3 border rounded-md shadow ">
+        <%= link_to 'Add New Book', new_book_path,class:"px-auto py-10 text-white text-center text-lg" %>
+      </button>
+    </div>
+    <div class=" grid grid-cols-1 gap-2 md:grid-cols-2 place-items-center   rounded-md bg-white p-2 text-white">    
+        <button class=" w-full bg-cyan-600 px-6 py-3 border rounded-md shadow ">  
+          <%= link_to 'Add New Library', new_library_path,class:"px-AUTO py-10 text-white text-left text-lg"%>
+        </button>
+        <button class=" w-full bg-cyan-600 px-6 py-3 border rounded-md shadow ">
+          <%= link_to 'Add New Librarian', new_user_path,class:"px-AUTO py-10 text-white  text-center text-lg"%>
+        </button>
+        
+        <button id="issue-btn" class="px-6 py-3  w-full bg-cyan-600 text-gray-100 rounded-md  text-center border  shadow">
+          <span class="text-lg py-10 text-white ">Issue Book </span>
+        </button>
+        <button id="return-btn" class="px-6 py-3 w-full bg-cyan-600 hover:bg-sky-700 text-gray-100  rounded-md   border text-center shadow">
+          <span class="text-lg py-10 text-white ">Return Book </span>
+        </button>    
+    </div>              
+  </div>
+</div>

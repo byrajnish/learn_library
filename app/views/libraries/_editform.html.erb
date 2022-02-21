@@ -1,25 +1,3 @@
-<%
-=begin%>
- <%= form_with(model: library, local: true) do |form| %>
-  <% if library.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(library.errors.count, "error") %> prohibited this library from being saved:</h2>
-
-      <ul>
-        <% library.errors.full_messages.each do |message| %>
-          <li><%=message%></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %> 
-<%
-=end%>
-
 <div class="members-login place-items-start mx-auto h-screen">
   <div class="w-full  max-w-6xl mx-auto shadow-xl pt-2 rounded-lg">
     <div class="flex items-center justify-between w-full mb-2">
@@ -57,7 +35,7 @@
         </div>
     
         <div class="actions focus:outline-none focus:shadow-outline">
-          <%= form.submit "Create Library", class: "bg-cyan-600 flex hover:bg-blue-700 justify-center w-full text-white text-xl font-medium rounded mt-4 p-2"%>
+          <%= form.submit "Edit Library", class: "bg-cyan-600 flex hover:bg-blue-700 justify-center w-full text-white text-xl font-medium rounded mt-4 p-2"%>
         </div>
       <% end %>
     </div>
